@@ -48,7 +48,7 @@ export default function RecruiterApplicationsPage() {
       try {
         const token = localStorage.getItem("token");
         const { data } = await axios.get(
-          "http://localhost:5000/api/v1/applications/recruiter",
+          "http://jobportal-949c.onrender.com/api/v1/applications/recruiter",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
