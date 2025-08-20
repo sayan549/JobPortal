@@ -73,7 +73,7 @@ const SeekerJobDetailsPage = () => {
     try {
       setApplying(true);
       await axios.post(
-        "https://localhost:5000/api/v1/applications/apply",
+        "https://jobportal-949c.onrender.com/api/v1/applications/apply",
         { jobId: id },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -102,7 +102,7 @@ const SeekerJobDetailsPage = () => {
     try {
       setSaving(true);
       await axios.post(
-        "https://localhost:5000/api/v1/saved-jobs/save",
+        "https://jobportal-949c.onrender.com/api/v1/saved-jobs/save",
         { jobId: id },
         { headers: { Authorization: `Bearer ${token}` } }
       );
