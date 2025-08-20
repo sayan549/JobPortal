@@ -28,7 +28,7 @@ const MyJobsPage = () => {
       }
 
       const res = await axios.get(
-        "http://localhost:5000/api/v1/job/my-jobs",
+        "http://jobportal-949c.onrender.com/api/v1/job/my-jobs",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -54,7 +54,7 @@ const MyJobsPage = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.delete(
-        `http://localhost:5000/api/v1/job/delete/${jobId}`,
+        `http://jobportal-949c.onrender.com/api/v1/job/delete/${jobId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
