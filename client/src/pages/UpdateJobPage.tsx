@@ -43,7 +43,7 @@ export default function UpdateJobPage() {
     const fetchJob = async () => {
       try {
         const token = localStorage.getItem("token");
-        const { data } = await axios.get(`http://jobportal-949c.onrender.com/api/v1/job/single/${id}`, {
+        const { data } = await axios.get(`https://jobportal-949c.onrender.com/api/v1/job/single/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (data?.job) {
@@ -73,7 +73,7 @@ export default function UpdateJobPage() {
   const onSubmit = async (data: JobFormInputs) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.put(`http://jobportal-949c.onrender.com/api/v1/job/update/${id}`, data, {
+      await axios.put(`https://jobportal-949c.onrender.com/api/v1/job/update/${id}`, data, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success("✅ Job updated successfully!");
