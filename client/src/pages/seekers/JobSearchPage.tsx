@@ -13,7 +13,7 @@ const JobSearchPage = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/v1/job/search", {
+        const res = await axios.get("http://jobportal-949c.onrender.com/api/v1/job/search", {
           params: { keyword: searchTerm },
         });
         setJobs(res.data.jobs);
