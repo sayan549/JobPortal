@@ -51,7 +51,7 @@ const SeekerProfilePage: React.FC = () => {
     const fetchProfile = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:5000/api/v1/seeker/profile", {
+        const res = await axios.get("http://jobportal-949c.onrender.com/api/v1/seeker/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
