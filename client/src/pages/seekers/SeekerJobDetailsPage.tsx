@@ -28,7 +28,7 @@ const SeekerJobDetailsPage = () => {
       try {
         const token = localStorage.getItem("token");
         const res = await axios.get(
-          `http://jobportal-949c.onrender.com/api/v1/job/single/${id}`,
+          `https://jobportal-949c.onrender.com/api/v1/job/single/${id}`,
           token ? { headers: { Authorization: `Bearer ${token}` } } : {}
         );
         setJob(res.data);
@@ -37,7 +37,7 @@ const SeekerJobDetailsPage = () => {
         if (token) {
           try {
             const savedRes = await axios.get(
-              "http://jobportal-949c.onrender.com/api/v1/saved-jobs/my",
+              "https://jobportal-949c.onrender.com/api/v1/saved-jobs/my",
               { headers: { Authorization: `Bearer ${token}` } }
             );
             const alreadySaved = savedRes.data.savedJobs.some(
@@ -73,7 +73,7 @@ const SeekerJobDetailsPage = () => {
     try {
       setApplying(true);
       await axios.post(
-        "http://localhost:5000/api/v1/applications/apply",
+        "https://localhost:5000/api/v1/applications/apply",
         { jobId: id },
         { headers: { Authorization: `Bearer ${token}` } }
       );
