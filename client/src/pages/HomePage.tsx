@@ -26,7 +26,7 @@ export default function HomePage() {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/v1/job/search");
+        const res = await axios.get("https://jobportal-949c.onrender.com/api/v1/job/search");
         setJobs(res.data.jobs || []);
       } catch (err) {
         console.error("Failed to fetch jobs", err);
