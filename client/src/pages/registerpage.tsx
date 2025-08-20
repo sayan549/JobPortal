@@ -27,7 +27,7 @@ export default function RegisterPage() {
 
   const onSubmit = async (data: RegisterFormData) => {
     try {
-      const response = await axios.post("http://jobportal-949c.onrender.com/api/v1/auth/register", data);
+      const response = await axios.post("https://jobportal-949c.onrender.com/api/v1/auth/register", data);
       toast.success("Registered successfully!");
       console.log("Registered:", response.data);
     } catch (error: any) {
