@@ -30,12 +30,19 @@ export default function LoginPage() {
       localStorage.setItem("token", token);
       localStorage.setItem("role", pendingRole);
       localStorage.removeItem("pendingRole");
-
-      toast.success("Login successful");
-
+      // ✅ Navigate first
       if (pendingRole === "jobseeker") navigate("/dashboard/jobseeker");
       else if (pendingRole === "recruiter") navigate("/dashboard/recruiter");
       else navigate("/");
+
+      // ✅ Then toast after navigation
+      setTimeout(() => {
+         toast.success("Login successful");
+      }, 100);
+
+      
+
+      
     } catch (error: any) {
       toast.error(error.response?.data?.message || "Login failed");
     }
