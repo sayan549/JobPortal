@@ -15,7 +15,7 @@ const RecruiterJobDetailsPage = () => {
       try {
         const token = localStorage.getItem("token");
         const res = await axios.get(
-          `http://jobportal-949c.onrender.com/api/v1/job/single/${id}`,
+          `https://jobportal-949c.onrender.com/api/v1/job/single/${id}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
