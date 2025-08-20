@@ -102,7 +102,7 @@ const SeekerJobDetailsPage = () => {
     try {
       setSaving(true);
       await axios.post(
-        "http://localhost:5000/api/v1/saved-jobs/save",
+        "https://localhost:5000/api/v1/saved-jobs/save",
         { jobId: id },
         { headers: { Authorization: `Bearer ${token}` } }
       );
