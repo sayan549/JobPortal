@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"; 
 
 // ✅ Zod schema with role validation
 const registerSchema = z.object({
@@ -17,6 +18,7 @@ const registerSchema = z.object({
 type RegisterFormData = z.infer<typeof registerSchema>;
 
 export default function RegisterPage() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -30,6 +32,7 @@ export default function RegisterPage() {
       const response = await axios.post("https://jobportal-949c.onrender.com/api/v1/auth/register", data);
       toast.success("Registered successfully!");
       console.log("Registered:", response.data);
+      setTimeout(() => navigate("/login"), 1500);
     } catch (error: any) {
       console.error("Error:", error.response?.data?.message || error.message);
       toast.error(error.response?.data?.message || "Registration failed");
