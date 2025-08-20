@@ -11,7 +11,7 @@ const AppliedJobsPage = () => {
       try {
         const token = localStorage.getItem("token");
         const res = await axios.get(
-          "http://localhost:5000/api/v1/applications/seeker",
+          "http://jobportal-949c.onrender.com/api/v1/applications/seeker",
           {
             headers: {
               Authorization: `Bearer ${token}`,
