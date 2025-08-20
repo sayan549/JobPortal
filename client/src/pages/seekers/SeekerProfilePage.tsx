@@ -117,7 +117,7 @@ const SeekerProfilePage: React.FC = () => {
       if (resumeFile) data.append("resume", resumeFile);
 
       const res = await axios.post(
-        "https://localhost:5000/api/v1/seeker/update-profile",
+        "https://jobportal-949c.onrender.com/api/v1/seeker/update-profile",
         data,
         {
           headers: {
