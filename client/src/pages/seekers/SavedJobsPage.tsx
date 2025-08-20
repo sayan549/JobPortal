@@ -13,7 +13,7 @@ const SavedJobsPage = () => {
     const fetchSavedJobs = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:5000/api/v1/saved-jobs/my", {
+        const res = await axios.get("http://jobportal-949c.onrender.com/api/v1/saved-jobs/my", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setSavedJobs(res.data.savedJobs || []);
