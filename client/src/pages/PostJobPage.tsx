@@ -35,7 +35,7 @@ export default function PostJobPage() {
   const onSubmit = async (data: JobFormInputs) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.post("http://jobportal-949c.onrender.com/api/v1/job/create", data, {
+      await axios.post("https://jobportal-949c.onrender.com/api/v1/job/create", data, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
