@@ -17,7 +17,7 @@ export default function RecruiterDashboard() {
       }
 
       try {
-        const res = await axios.get("http://jobportal-949c.onrender.com/api/v1/auth/current-user", {
+        const res = await axios.get("https://jobportal-949c.onrender.com/api/v1/auth/current-user", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
