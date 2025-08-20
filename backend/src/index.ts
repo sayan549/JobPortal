@@ -9,20 +9,29 @@ import statsRoutes from "./routes/statsRoutes";
 import seekerProfileRoutes from "./routes/seekerProfileRoutes";
 import savedJobRoutes from "./routes/savedJobRoutes";
 import cors from "cors";
+
 dotenv.config();
 connectDB();
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
+
 app.use(express.json());
 
+// ✅ CORS setup
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    credentials: true,
+  })
+);
+
+// ✅ Default route
 app.get("/", (req, res) => {
   res.send("Job Portal API is running...");
 });
 
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
-
-// Route middleware
+// ✅ Routes
 app.use("/api", testRoute);
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/job", jobRoutes);
@@ -31,6 +40,7 @@ app.use("/api/v1/saved-jobs", savedJobRoutes);
 app.use("/api/v1/stats", statsRoutes);
 app.use("/api/v1/seeker", seekerProfileRoutes);
 
+// ✅ Start server
 app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+  console.log(`✅ Server is running on port ${PORT}`);
 });
