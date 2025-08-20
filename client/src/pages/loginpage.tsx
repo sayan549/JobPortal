@@ -22,7 +22,7 @@ export default function LoginPage() {
 
   const onSubmit = async (data: any) => {
     try {
-      const res = await axios.post("http://jobportal-949c.onrender.com/api/v1/auth/login", data);
+      const res = await axios.post("https://jobportal-949c.onrender.com/api/v1/auth/login", data);
       const { token, role } = res.data;
 
       const pendingRole = localStorage.getItem("pendingRole") || role;
